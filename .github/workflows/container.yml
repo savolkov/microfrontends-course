@@ -22,7 +22,7 @@ jobs:
           git config --global user.email "sv@savolkov.tech" ||
           git config --global user.name "Semyon Volkov"
       - run: |
-          mv packages/container/dist output/container ||
+          mkdir -p output/container && mv -f packages/container/dist/** output/container ||
           git add output/ ||
           git commit -m "Updated Container MF" || 
           git push origin master:gh-pages ||
